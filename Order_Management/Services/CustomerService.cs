@@ -2,6 +2,7 @@
 using Order_Management.IRepositories;
 using Order_Management.IServices;
 using Order_Management.Models;
+using Order_Management.Repositories;
 
 namespace Order_Management.Services
 {
@@ -39,23 +40,24 @@ namespace Order_Management.Services
         public async Task UpdateCustomerAsync(CustomerRequestDTO customerRequestDTO, int id)
         {
             var existingCustomer = await _customerRepository.GetCustomerByIdAsync(id);
-            if (existingCustomer.Id == id)
+            if (existingCustomer == null)
             {
-                existingCustomer.Name = customerRequestDTO.Name;
-                existingCustomer.Email = customerRequestDTO.Email;
-                existingCustomer.Address = customerRequestDTO.Address;
-                existingCustomer.Phone = customerRequestDTO.Phone;
+                throw new KeyNotFoundException("Customer not found.");
             }
+
+            existingCustomer.Name = customerRequestDTO.Name;
+            existingCustomer.Email = customerRequestDTO.Email;
+            existingCustomer.Address = customerRequestDTO.Address;
+            existingCustomer.Phone = customerRequestDTO.Phone;
+
             var customerData = _customerRepository.UpdateCustomerAsync(existingCustomer);
         }
 
-        public async Task DeleteCustomerAsync(int id)
+        public async Task<bool> DeleteCustomerAsync(int id)
         {
-            var existingCustomer = await _customerRepository.GetCustomerByIdAsync(id);
-            if (existingCustomer.Id == id)
-            {
-                await _customerRepository.DeleteCustomerAsync(id);
-            }
+            var success = await _customerRepository.DeleteCustomerAsync(id);
+            if (!success) throw new KeyNotFoundException("Customer not found.");
+            return success;
         }
     }
 }

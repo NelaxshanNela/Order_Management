@@ -170,3 +170,4 @@ D:\Projects\Practise\Order_Management\Order_Management\obj\Debug\net8.0\refint\O
 D:\Projects\Practise\Order_Management\Order_Management\obj\Debug\net8.0\Order_Management.pdb
 D:\Projects\Practise\Order_Management\Order_Management\obj\Debug\net8.0\Order_Management.genruntimeconfig.cache
 D:\Projects\Practise\Order_Management\Order_Management\obj\Debug\net8.0\ref\Order_Management.dll
+D:\Projects\Practise\Order_Management\Order_Management\obj\Debug\net8.0\Order_Management.sourcelink.json

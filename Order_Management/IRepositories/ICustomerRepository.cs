@@ -8,6 +8,6 @@ namespace Order_Management.IRepositories
         Task<Customer> GetCustomerByIdAsync(int id);
         Task AddCustomerAsync(Customer customer);
         Task UpdateCustomerAsync(Customer customer);
-        Task DeleteCustomerAsync(int id);
+        Task<bool> DeleteCustomerAsync(int id);
     }
 }

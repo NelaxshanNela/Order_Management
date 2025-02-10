@@ -1,14 +1,14 @@
 ﻿using Order_Management.DTOs.RequesDTOs;
 using Order_Management.Models;
 
-namespace Order_Management.IRepositories
+namespace Order_Management.IServices
 {
-    public interface IOrderRepository
+    public interface IOrderService
     {
         Task<List<Order>> GetAllOrdersAsync();
         Task<Order> GetOrderByIdAsync(int id);
-        Task AddOrderAsync(Order Order);
-        Task UpdateOrderAsync(Order Order);
+        Task AddOrderAsync(OrderRequestDTO OrderRequestDTO);
+        Task UpdateOrderAsync(OrderRequestDTO OrderRequestDTO, int id);
         Task<bool> DeleteOrderAsync(int id);
     }
 }

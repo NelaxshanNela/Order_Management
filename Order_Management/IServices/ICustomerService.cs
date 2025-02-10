@@ -9,6 +9,6 @@ namespace Order_Management.IServices
         Task<Customer> GetCustomerByIdAsync(int id);
         Task AddCustomerAsync(CustomerRequestDTO customerRequestDTO);
         Task UpdateCustomerAsync(CustomerRequestDTO customerRequestDTO, int id);
-        Task DeleteCustomerAsync(int id);
+        Task<bool> DeleteCustomerAsync(int id);
     }
 }

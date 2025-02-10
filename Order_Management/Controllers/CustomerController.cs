@@ -19,41 +19,83 @@ namespace Order_Management.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllCustomers()
         {
-            var exsitingCustomers = await _service.GetAllCustomersAsync();
-            if (exsitingCustomers == null) return BadRequest("No data found...");
+            try
+            {
+                var exsitingCustomers = await _service.GetAllCustomersAsync();
 
-            return Ok(exsitingCustomers);
+                if (exsitingCustomers == null)
+                {
+                    return BadRequest("No data found");
+                }
+                return Ok(exsitingCustomers);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> GetCustomerById(int id)
         {
-            var customer = await _service.GetCustomerByIdAsync(id);
-            if (customer == null) return NotFound("Invalid customer id...");
-            return Ok(customer);
+            try
+            {
+                var exsitingCustomer = await _service.GetCustomerByIdAsync(id);
+
+                if (exsitingCustomer == null)
+                {
+                    return BadRequest("Invalid customer id");
+                }
+                return Ok(exsitingCustomer);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(CustomerRequestDTO customerRequestDTO)
         {
-            await _service.AddCustomerAsync(customerRequestDTO);
-            return Ok("Created succesfully...");
+            try
+            {
+                await _service.AddCustomerAsync(customerRequestDTO);
+                return Ok(new { success = true, message = "Customer added successfully" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { success = false, message = "Error adding Customer", error = ex.Message });
+            }
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, CustomerRequestDTO customerRequestDTO)
+        public async Task<IActionResult> UpdateCustomer(int id, CustomerRequestDTO customerRequestDTO)
         {
-            await _service.UpdateCustomerAsync(customerRequestDTO, id);
-            return Ok("Updated Succesfully...");
+            try
+            {
+                await _service.UpdateCustomerAsync(customerRequestDTO, id);
+                return Ok(new { success = true, message = "Customer Updated successfully" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { success = false, message = "Error Updating Customer", error = ex.Message });
+            }
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteCustomer(int id)
         {
-            await _service.DeleteCustomerAsync(id);
-            return Ok("Deleted Successfully...");
+            try
+            {
+                await _service.DeleteCustomerAsync(id);
+                return Ok(new { success = true, message = "Customer Deleted Successfully." });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { success = false, message = "Error Deleting Customer", error = ex.Message });
+            }
         }
     }
 }

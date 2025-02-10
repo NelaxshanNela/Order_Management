@@ -36,14 +36,16 @@ namespace Order_Management.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteCustomerAsync(int id)
+        public async Task<bool> DeleteCustomerAsync(int id)
         {
             var customer = await _context.Customers.FindAsync(id);
             if (customer != null)
             {
                 _context.Customers.Remove(customer);
                 await _context.SaveChangesAsync();
+                return true;
             }
+            return false;
         }
     }
 }

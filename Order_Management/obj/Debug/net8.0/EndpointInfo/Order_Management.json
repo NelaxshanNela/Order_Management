@@ -459,10 +459,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "totalPrice": {
-            "type": "number",
-            "format": "double"
-          },
           "status": {
             "$ref": "#/components/schemas/OrderStatus"
           }

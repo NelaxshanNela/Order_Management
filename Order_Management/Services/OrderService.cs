@@ -50,7 +50,7 @@ namespace Order_Management.Services
                 ProductId = orderRequestDTO.ProductId,
                 CustomerId = orderRequestDTO.CustomerId,
                 Quantity = orderRequestDTO.Quantity,
-                TotalPrice = orderRequestDTO.TotalPrice,
+                TotalPrice = product.Price * orderRequestDTO.Quantity,
                 OrderDate = DateTime.Now,
                 Status = 0
             };

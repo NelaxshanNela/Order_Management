@@ -59,8 +59,7 @@
               "RelativeToolTip": "Order_Management\\Services\\OrderService.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAASwB0AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T03:53:58.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-11T03:53:58.802Z"
             },
             {
               "$type": "Document",
@@ -72,8 +71,7 @@
               "RelativeToolTip": "Order_Management\\Services\\CustomerService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T19:10:37.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T19:10:37.014Z"
             },
             {
               "$type": "Document",
@@ -85,8 +83,7 @@
               "RelativeToolTip": "Order_Management\\Controllers\\ProductController.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAiwGIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T19:10:00.671Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T19:10:00.671Z"
             },
             {
               "$type": "Document",
@@ -98,8 +95,7 @@
               "RelativeToolTip": "Order_Management\\Controllers\\CustomerController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T19:08:53.877Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T19:08:53.877Z"
             },
             {
               "$type": "Document",
@@ -111,8 +107,7 @@
               "RelativeToolTip": "Order_Management\\Controllers\\OrderController.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAgwDwAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T19:08:43.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-10T19:08:43.424Z"
             }
           ]
         }
